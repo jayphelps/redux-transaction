@@ -1,17 +1,17 @@
 import { getTransactionMeta } from './utils';
 
 const transaction = (state = {}, action) => {
-  const { type } = action.meta.transaction;
+  const { type, id } = action.meta.transaction;
 
   switch (type) {
     case 'BEGIN':
-      return { isPending: true, error: null };
+      return { id, isPending: true, error: null };
 
     case 'COMMIT':
-      return { isPending: false, error: null };
+      return { id, isPending: false, error: null };
 
     case 'ROLLBACK':
-      return { isPending: false, error: action.payload || null };
+      return { id, isPending: false, error: action.payload || null };
 
     default:
       return state;
