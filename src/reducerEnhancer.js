@@ -41,7 +41,7 @@ const transactions = (state = {}, action) => {
 };
 
 export default function reducer(rootReducer) {
-  const pending = Object.create(null);
+  const pending = {};
 
   return (state = {}, action) => {
     let { transactions: transactionsState, ...innerState } = state;

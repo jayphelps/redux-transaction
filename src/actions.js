@@ -7,7 +7,7 @@ let transactionID = 0;
 export const pend = action => ({
   ...action,
   meta: {
-    optimism: {
+    transaction: {
       type: BEGIN,
       id: `${++transactionID}`
     }
@@ -18,9 +18,9 @@ export const fulfill = (action, payload) => ({
   type: action.type + '_FULFILLED',
   payload,
   meta: {
-    optimism: {
+    transaction: {
       type: COMMIT,
-      id: action.meta.optimism.id
+      id: action.meta.transaction.id
     }
   }
 });
@@ -30,9 +30,9 @@ export const reject = (action, payload) => ({
   payload,
   error: true,
   meta: {
-    optimism: {
+    transaction: {
       type: ROLLBACK,
-      id: action.meta.optimism.id
+      id: action.meta.transaction.id
     }
   }
 });
@@ -40,9 +40,9 @@ export const reject = (action, payload) => ({
 export const cancel = action => ({
   type: action.type + '_CANCELLED',
   meta: {
-    optimism: {
+    transaction: {
       type: ROLLBACK,
-      id: action.meta.optimism.id
+      id: action.meta.transaction.id
     }
   }
 });
