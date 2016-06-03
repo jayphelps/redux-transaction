@@ -32,11 +32,17 @@ export default {
       { test: /\.jsx?$/, loaders: ['babel'], exclude: /node_modules/ },
     ],
   },
-
   entry: [
     './src/index',
   ],
-
+  externals: {
+    'redux': {
+      root: 'Redux',
+      commonjs2: 'redux',
+      commonjs: 'redux',
+      amd: 'redux'
+    }
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename,

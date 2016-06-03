@@ -1,8 +1,14 @@
 {
-    "presets": ["es2015"],
-    "plugins": [
-      "transform-es2015-modules-commonjs",
-      "transform-object-rest-spread",
-      "transform-export-extensions"
-    ]
+  "presets": ["es2015-native-modules"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-export-extensions"
+  ],
+  "env": {
+    "cjs": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    }
+  }
 }
