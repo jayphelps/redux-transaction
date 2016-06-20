@@ -1,6 +1,6 @@
 # redux-transaction (alpha)
 
-As of now, this is just an experiment. I highly recommend you don't use this yet, but feel free to keep an eye on it. It will make a lot more sense later combined with react-redux-transactions + redux-observable.
+As of now, this is just an experiment. I highly recommend you don't use this yet, but feel free to keep an eye on it. It will make a lot more sense later combined with react-redux-transaction + redux-observable.
 
 ##### rootReducer.js
 
